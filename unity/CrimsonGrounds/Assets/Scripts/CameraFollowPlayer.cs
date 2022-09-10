@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class CameraFollowPlayer : MonoBehaviour
 {
+    [Header("General")]
+    public bool debug;
+    
     [Header("Camera tracking")]
     public bool isFollowing = true;
     public Transform player;
@@ -32,8 +35,10 @@ public class CameraFollowPlayer : MonoBehaviour
 
         if (isColliding)
         {
+            if(!debug) return;
+            
             // check if camera is colliding with something
-            if (Physics.CheckSphere(cameraTransform.position, cameraCollisionRadius, cameraCollisionLayer))
+            if (Physics.CheckSphere(transform.position, cameraCollisionRadius, cameraCollisionLayer))
             {
                Debug.Log("Camera is colliding");
             }
