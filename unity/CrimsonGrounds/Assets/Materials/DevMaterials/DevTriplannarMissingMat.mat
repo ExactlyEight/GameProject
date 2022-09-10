@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DevTriplannarMat
-  m_Shader: {fileID: -6465566751694194690, guid: 4099403b656a65d419293b80725a6e8f,
+  m_Name: DevTriplannarMissingMat
+  m_Shader: {fileID: -6465566751694194690, guid: 15b956912b051154d89b55f5deb2089d,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -87,7 +87,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Blend: 0.5
+    - _Blend: 1
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -118,7 +118,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.45911944, b: 0.8875816, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Offset: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _Scale: {r: 1, g: 1, b: 0, a: 0}
