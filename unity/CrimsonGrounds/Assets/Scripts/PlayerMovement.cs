@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {   
@@ -13,11 +14,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("Direction")]
     public float turnSmoothTime = 0.1f;
     private Vector2 _direction;
+    private Vector2 _directionNormalized;
 
     [Header("Jumping")]
     public float jumpForce = 5f;
     public float gravity = -9.81f;
     public float groundSnap = 3f;
+    public float jumpForgiveness = 0.2f;
+    private float _jumpForgivenessTimer;
+    private bool _isJumping;
     
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -52,9 +57,18 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         
         // Snap to ground
-        if (_isGrounded && _velocity.y < 0)
+        if (_isGrounded)
         {
-            _velocity.y = -groundSnap;
+            if(_velocity.y < 0)
+            {
+                _velocity.y = -groundSnap;
+                _isJumping = false;
+            }
+            _jumpForgivenessTimer = 0f;
+        }
+        else
+        {
+            _jumpForgivenessTimer += Time.deltaTime;
         }
         
         // Check for ceiling
@@ -64,11 +78,12 @@ public class PlayerMovement : MonoBehaviour
         }
         
         // Add jump
-        if (jump && _isGrounded)
+        if (jump && (_isGrounded || _jumpForgivenessTimer < jumpForgiveness))
         {
             _velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            _isJumping = true;
         }
-        
+
         // Add gravity
         _velocity.y += gravity * Time.deltaTime;
         
@@ -77,22 +92,43 @@ public class PlayerMovement : MonoBehaviour
         
         // Apply velocity
         controller.Move(_velocity * Time.deltaTime);
+        
+        // rotate player
+        // if(_direction.magnitude >= 0.1f)
+        // {
+        //     var targetAngle = Mathf.Atan2(_direction.x, _direction.y) * Mathf.Rad2Deg;
+        //     transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+        // }
     }
     
     void OnDrawGizmos()
     {
         if (!debug) return;
+        
         // draw ground check
-        Gizmos.color = _isGrounded ? Color.green : Color.red;
-        Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
+        if (_isGrounded)
+        {
+            Gizmos.color = Color.green;
+        } else if (_jumpForgivenessTimer < jumpForgiveness)
+        {
+            Gizmos.color = Color.yellow;
+        }
+        else
+        {
+            Gizmos.color = Color.red;
+        }
+        Gizmos.DrawSphere(groundCheck.position, groundDistance);
             
         // draw ceiling check
         Gizmos.color = _isCeiling ? Color.green : Color.red;
-        Gizmos.DrawWireSphere(ceilingCheck.position, ceilingDistance);
+        Gizmos.DrawSphere(ceilingCheck.position, ceilingDistance);
         
         // draw direction
         Gizmos.color = Color.blue;
         var position = transform.position;
         Gizmos.DrawLine(position, position + new Vector3(_direction.x, 0, _direction.y)*2);
+        Gizmos.color = Color.cyan;
+        _directionNormalized = _direction.normalized;
+        Gizmos.DrawLine(position, position + new Vector3(_directionNormalized.x, 0, _directionNormalized.y)*2);
     }
 }
