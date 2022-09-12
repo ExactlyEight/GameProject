@@ -88,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
         _velocity.y += gravity * Time.deltaTime;
         
         // Move player
+        // rotate player movement to face direction
+        var moveDirection = Quaternion.LookRotation(move) * _directionNormalized;
         controller.Move(move * (speed * Time.deltaTime));
         
         // Apply velocity
