@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 public class PlayerMovement : MonoBehaviour
 {   
@@ -13,8 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Direction")]
     public float turnSmoothTime = 0.1f;
-    private Vector2 _direction;
-    private Vector2 _directionNormalized;
+    private Vector3 _direction;
 
     [Header("Jumping")]
     public float jumpForce = 5f;
@@ -36,8 +37,20 @@ public class PlayerMovement : MonoBehaviour
     public float ceilingDistance = 0.4f;
     private bool _isCeiling;
 
-    private Vector3 _velocity;
+    [Header("Camera")]
+    [Tooltip("The camera that will be used to determine the direction the player is facing")]
+    public Transform cam;
+    public Transform orientation;
 
+    private Vector3 _velocity;
+    
+    void Start()
+    {
+        // lock and hide cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    
     void Update()
     {
         // Get input
@@ -48,14 +61,19 @@ public class PlayerMovement : MonoBehaviour
         _isCeiling = Physics.CheckSphere(ceilingCheck.position, ceilingDistance, groundMask);
         
         // update direction
-        if(x != 0 || z != 0)
-        {
-            _direction = Vector2.Lerp(_direction, new Vector2(x, z), turnSmoothTime);
-        }
+    
+            // rotate orientation
+            var viewDirection = transform.position - new Vector3(cam.position.x, transform.position.y, cam.position.z);
+            orientation.forward = viewDirection.normalized;
+            
+            // rotate player
+            Vector3 inputDirection = orientation.forward* z + orientation.right * x;
+            if (inputDirection != Vector3.zero)
+            {
+                transform.forward = Vector3.Slerp(transform.forward, inputDirection.normalized, turnSmoothTime * Time.deltaTime);
+            }
         
-        // Move player
-        Vector3 move = transform.right * x + transform.forward * z;
-        
+
         // Snap to ground
         if (_isGrounded)
         {
@@ -88,17 +106,11 @@ public class PlayerMovement : MonoBehaviour
         _velocity.y += gravity * Time.deltaTime;
         
         // Move player
-        controller.Move(move * (speed * Time.deltaTime));
+        // rotate player movement to face direction
+        controller.Move( inputDirection * (speed * Time.deltaTime));
         
         // Apply velocity
         controller.Move(_velocity * Time.deltaTime);
-        
-        // rotate player
-        // if(_direction.magnitude >= 0.1f)
-        // {
-        //     var targetAngle = Mathf.Atan2(_direction.x, _direction.y) * Mathf.Rad2Deg;
-        //     transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-        // }
     }
     
     void OnDrawGizmos()
@@ -128,7 +140,5 @@ public class PlayerMovement : MonoBehaviour
         var position = transform.position;
         Gizmos.DrawLine(position, position + new Vector3(_direction.x, 0, _direction.y)*2);
         Gizmos.color = Color.cyan;
-        _directionNormalized = _direction.normalized;
-        Gizmos.DrawLine(position, position + new Vector3(_directionNormalized.x, 0, _directionNormalized.y)*2);
     }
 }

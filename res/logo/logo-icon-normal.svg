@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="132" height="234" viewBox="0 0 132 234">
+  <defs>
+    <filter id="Union_15" x="3" y="0" width="124" height="234" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#eebfbb"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="logo-icon-normal" transform="translate(-710 -66)">
+    <rect id="Rectangle_592" data-name="Rectangle 592" width="132" height="144" transform="translate(710 99)" fill="#dc3022"/>
+    <g transform="matrix(1, 0, 0, 1, 710, 66)" filter="url(#Union_15)">
+      <path id="Union_15-2" data-name="Union 15" d="M-6442-2013v-70h-4v70h-4v-70h-14v30h-8v-30h-14v-4h14v-92h-14v-4h14v-46h8v46h14v-16h4v16h4v-16h12v16h22v-46h4v46h4v-34h8v34h12v4h-12v22h-8v-22h-4v22h-4v-22h-22v92h22v-22h8v22h4v-22h4v22h12v4h-12v42h-4v-42h-4v30h-8v-30h-22v70Zm0-74v-92h-4v92Zm-8,0v-92h-14v92Z" transform="translate(6498 2238)" fill="#f8f8f9"/>
+    </g>
+  </g>
+</svg>
