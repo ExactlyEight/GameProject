@@ -2,6 +2,8 @@
 ## We are looking for programmers who want to join our team. 😊
 
 ![alt text](res/img/style.jpg)
+
+![alt text](res/img/gameloop.jpg)
 We generated some concepts using AI + some UI stuff ( Don´t laugh the domain and hosting is free 😔): <br>https://kkz.gay/concept 
 <br> With our knowledge in graphics and your programming we can work it out, come and join us (Before that please read the ideas below).
 
@@ -37,28 +39,23 @@ You are the one! 🤩
 <br>GROUNDS - as for the blood running on the grounds
 <br><br>•	Blood will have a significant aspect in the game.
 
-## Game logo: 
-<br>Link will be pasted here
+## Game: 
 <br>Three main points about the game:
-<br>•	RAGUUU-LIKE (Rough-like) third view gameplay
+<br>• Rough-like third view gameplay
 <br>•	Beautiful graphics and environment
-<br>•	Combo system 
+<br>•	Ability system 
 
 ## Gameplay idea:
 <br>•	Going though the level, killing enemies, and progressing to the boss.
 <br>•	If the player stays in the level stage for two long, number of enemies will increase.
 <br>•	Through the gameplay improving ability repertoire as well as weapons.
-<br>•	Combos will have significant impact on the game. As the player gets a better grip in the game, the combo styles will improve.
+<br>•	Abilities will have significant impact on the game.
 
 # What will be in the game:
 
-## Menu: 
-<br>•	Clean and futuristic style in neutral/cold colors.
-
 ## Main character: 
 <br>•	Girl in white suite.
-<br>•	Three playable styles. (Close, Tank, Range)
-<br>•	Multiple weapons and abilities for combo style of play.
+<br>•	Multiple abilities for different play styles.
 <br>•	Half mechanic, half humanoid character.
 
 ## Enemies: 
@@ -67,19 +64,19 @@ You are the one! 🤩
 <br>•	Three main enemy types:
 <br> >>	Close combat: slasher, smasher …
 <br> >>	Range combat: flamethrower, drones …
-<br> >>	Mid-range/stealth: assassin, heal robot …
+<br> >>	Mid-range/stealth: assassin, heal bot …
 
 ## Allies: 
 <br>•	The Vendor is the only ally, one of the ways of getting better weapons and ability upgrades.
-<br>•	Will be settled in the generated building. (Once in a time he shows himself.)
+<br>•	Will be settled in the generated building. (generated once per level)
 
 ## Map: 
-<br>•	Each district will change its shape when the player dies. 
+<br>•	Each district will change its layout when the player dies. 
 <br>•	Map generated in procedural way from created assets.
 
 ## Environment: 
 <br>•	Futuristic city with tall block buildings in neon style.
-<br>•	Cable cars transporting through the levels.
+<br>•	Trains/lifts transporting through the levels.
 <br>•	Multiple levels of environment. (1st – closest most detailed enviro (streets and assets directly within the players reach), 2nd – further enviro with less details (top parts of the buildings), 3rd – far away enviro completing image (background and filler assets))
 <br>•	Fog for covering nonvisible areas and creating tension during the game.
 
