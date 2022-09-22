@@ -68,7 +68,7 @@ You are the one! 🤩
 <br> >>	Range combat: flamethrower, drones …
 <br> >>	Mid-range/stealth: assassin, heal bot …
 
-## Allies: 
+## Shop: 
 <br>•	The Vendor is the only ally, one of the ways of getting better weapons and ability upgrades.
 <br>•	Will be settled in the generated building. (generated once per level)
 
