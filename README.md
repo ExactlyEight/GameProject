@@ -12,10 +12,12 @@ We generated some concepts using AI + some UI stuff ( Don´t laugh the domain an
 <br>Michal Kokeš:
 <br>https://sketchfab.com/Just8
 <br>https://www.artstation.com/just_8
+<br> Discord: Just8 #1847
 <br> + 2D graphic freelancer
 
 <br>Erik Kinč:
 <br>https://www.artstation.com/erikkinc
+<br> Discord: Erík #0015
 <br> + 2 months as a rigger in a rig studio
 
 ## Programmers:
