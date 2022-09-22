@@ -1,17 +1,20 @@
 # Crimson grounds
-## We are looking for programmers who wants to join our team. 😊
+## We are looking for programmers who want to join our team. 😊
 
 ![alt text](res/img/style.jpg)
-We generated some concepts using AI + some UI stuff ( Don´t laugh the domain and hosting is free 😔): https://kkz.gay/concept 
+We generated some concepts using AI + some UI stuff ( Don´t laugh the domain and hosting is free 😔): <br>https://kkz.gay/concept 
 <br> With our knowledge in graphics and your programming we can work it out, come and join us (Before that please read the ideas below).
 
 ## Artists:
 
 <br>Michal Kokeš:
 <br>https://sketchfab.com/Just8
+<br>https://www.artstation.com/just_8
+<br> + 2D graphic freelancer
 
 <br>Erik Kinč:
 <br>https://www.artstation.com/erikkinc
+<br> + 2 months as a rigger in a rig studio
 
 ## Programmers:
 
