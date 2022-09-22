@@ -43,7 +43,7 @@ You are the one! 🤩
 
 ## Game: 
 <br>Three main points about the game:
-<br>• Rough-like third view gameplay
+<br>• Rough-like third person view gameplay
 <br>•	Beautiful graphics and environment
 <br>•	Ability system 
 
