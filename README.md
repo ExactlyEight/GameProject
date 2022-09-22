@@ -3,6 +3,7 @@
 
 ![alt text](res/img/style.jpg)
 We generated some concepts using AI + some UI stuff ( Don´t laugh the domain and hosting is free 😔): https://kkz.gay/concept 
+<br> With our knowledge in graphics and your programming we can work it out, come and join us (Before that please read the ideas below).
 
 ## Artists:
 
