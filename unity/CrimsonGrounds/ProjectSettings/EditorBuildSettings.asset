@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
-    path: "Assets/Scenes/Nov\xE1 slo\u017Eka/movementTestScene.unity"
-    guid: 0b88c8b1d06016c49b92024d374bfac9
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/DevScenes/UITestScene.unity
     guid: 44f67aa7077ccd849932abea01c4fad4
+  - enabled: 1
+    path: Assets/Scenes/DevScenes/VFXTestScene.unity
+    guid: 7bc94a8656435fd4da1cc5f455bd86bb
   m_configObjects: {}
